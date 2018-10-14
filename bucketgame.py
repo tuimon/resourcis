@@ -57,9 +57,9 @@ class App:
             self.label = "Play!"
             self.block_array = [None] * self.amount_of_blocks
             self.score=0
-            pyxel.sound(0).set('RF3F3F3', 'TTSS PPPN', '7777 7531', 'NFNF NVVS', 60)
-            pyxel.sound(0).speed = 60
-            pyxel.play(0,0)
+            # pyxel.sound(0).set('RF3F3F3', 'TTSS PPPN', '7777 7531', 'NFNF NVVS', 60)
+            # pyxel.sound(0).speed = 60
+            # pyxel.play(0,0)
 
         # change the colors
         if pyxel.btnp(pyxel.KEY_UP):
