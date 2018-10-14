@@ -8,4 +8,4 @@ Needs: python3, pyxel (pip3 install pyxel)
 
 Run: python3 bucketgame.py
 
-Play: use keys: left, right, up and space.
+Play: use keys: LEFT, RIGHT, UP (change colors), DOWN (faster), SPACE and Q(uit).
