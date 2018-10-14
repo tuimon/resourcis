@@ -1,0 +1,9 @@
+cffi==1.11.5
+glfw==1.7.0
+numpy==1.15.0
+Pillow==5.2.0
+pycparser==2.18
+PyOpenGL==3.1.0
+pyxel==0.7.9
+sounddevice==0.3.11
+speech==0.5.2
