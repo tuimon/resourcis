@@ -39,7 +39,12 @@ class App:
         self.speed = 1
         self.label = "PRESS SPACE BAR TO START..."
         pyxel.init(200, 255, caption='Resourcis')
+        self.init_sounds()
         pyxel.run(self.update, self.draw)
+
+    def init_sounds(self):
+        pyxel.sound(0).set('C3', 'TN', '77', 'NN', 10)
+        pyxel.sound(1).set('D4D3D2D1D0', 'TTTN', '7753', 'NSFF', 10)
 
     # read inputs, move things
     def update(self):
@@ -57,9 +62,6 @@ class App:
             self.label = "Play!"
             self.block_array = [None] * self.amount_of_blocks
             self.score=0
-            # pyxel.sound(0).set('RF3F3F3', 'TTSS PPPN', '7777 7531', 'NFNF NVVS', 60)
-            # pyxel.sound(0).speed = 60
-            # pyxel.play(0,0)
 
         # change the colors
         if pyxel.btnp(pyxel.KEY_UP):
@@ -119,6 +121,7 @@ class App:
 
     # take the blocks and put them into the array
     def save_blocks_to_array(self):
+        pyxel.play(0, 0)
         self.block_array[self.coordinates_to_index(self.gb.x, self.gb.y)] = self.gb.b1
         self.block_array[self.coordinates_to_index(self.gb.x, self.gb.y + 10)] = self.gb.b2
         self.block_array[self.coordinates_to_index(self.gb.x, self.gb.y + 20)] = self.gb.b3
@@ -173,6 +176,7 @@ class App:
             if self.block_array[i] != None and self.block_array[i].doomed:
                 self.score += 1
                 self.block_array[i] = None
+                pyxel.play(1, 1)
 
     # cleanup
     def cleanup(self):
